@@ -7,13 +7,71 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Download | FileShare - File Sharing Made Easy</title>
     <link rel="stylesheet" href="css/style.css" type="text/css">
+    <style>
+        :root {
+    --main-bg-color: #edf5fe;
+    --light-blue: #03a9f4;
+    --dark-blue: #028bca;
+}
+
+body{
+    font-family: system-ui;
+    background: var(--main-bg-color);
+    height: 98vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #333;
+}
+
+.logo {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 150px;
+}
+section.download {
+    background: #fff;
+    width: 430px;
+    max-width: 90%;
+    border-radius: 25px;
+    box-shadow: 0px 20px 20px 0px #00000017;
+    padding: 2rem;
+    text-align: center;
+}
+.download__icon {
+    height: 8rem;
+}
+.download__meta h4 {
+    margin-bottom: 0;
+    line-height: 1.3;
+}
+.send-btn-container a {
+    display: inline-block;
+    font-size: 18px;
+    padding: 8px 40px;
+    margin-top: 15px;
+    background: var(--light-blue);
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+  }
+
+.send-btn-container a:hover {
+    background: var(--dark-blue);
+}
+    </style>
 </head>
 
 <body>
-    <img src="../public/img/Screenshot_2022-10-10_092832-removebg-preview.png" alt="Fileshare logo" class="logo">
+    <img src="https://lh3.googleusercontent.com/_UWRnS8AOCK0May2w3TMXAUMAIOLzo0_6Lsq7Pn2NKl1TmWneSAOU1fAgff14ryfNZ6d4YYjP7K1aKnezYAt41xnLZhA7oKz5j5omAvo6ADIlWnw9Tw90mmPrhkwbs-DDxL1mBKc=w2400" alt="Fileshare logo" class="logo">
 
     <section class="download">
-        <img class="download__icon" src="../public/img/fileshare-removebg-preview.png" alt="Fileshare-download">
+        <img class="download__icon" src="https://lh3.googleusercontent.com/Qz7UHAOKQMQq-R6Pu-XRqOPssWI7kcNM8u2ge1K71-P2gegZqPlUOnbmZ3F3OBfP8DdcC8LMM7RqZLsHUSb8J1KYipANR9Hq-cmKBxg2eVs6kRnmDkScrSs3TDacmo86l5QvP-NS=w2400" alt="Fileshare-download">
         <% if(locals.error){ %>
         <h4><%= locals.error %> 😏</h4>
         <% } else { %>
