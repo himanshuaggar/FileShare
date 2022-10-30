@@ -10,10 +10,10 @@ router.get('/:uuid', async(req,res) =>{
             return res.render('download' , {error:'Link has been expired upload again!'});
         };
         return res.render('download',{
-            uuid: file.uuid,
-            fileName: file.fileName,
-            fileSize: file.size,
-            downloadLink:`${process.env.APP_BASE_URL}/files/download/${file.uuid}`
+            uuid: File.uuid,
+            fileName: File.fileName,
+            fileSize: File.size,
+            downloadLink:`${process.env.APP_BASE_URL}/files/download/${File.uuid}`
         });
 
     } catch(err){
