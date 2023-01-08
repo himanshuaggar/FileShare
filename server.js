@@ -14,7 +14,9 @@ connectDB();
 
 // CORS
 const corsOptions = {
-    origin: process.env.ALLOWED_CLIENTS
+    origin: process.env.ALLOWED_CLIENTS,
+    credentials:true,            //access-control-allow-credentials:true
+    optionSuccessStatus:200
 }
 
 app.use(cors(corsOptions));
