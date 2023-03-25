@@ -14,7 +14,7 @@ connectDB();
 
 // CORS
 const corsOptions = {
-    origin: "https://fileshare-himu.netlify.app/",
+    origin: "https://fileshare-himu.netlify.app",
     credentials:true,            //access-control-allow-credentials:true
     optionSuccessStatus:200
 }
