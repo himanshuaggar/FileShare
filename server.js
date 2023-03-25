@@ -13,13 +13,24 @@ const connectDB = require('./config/db');
 connectDB();
 
 // CORS
-const corsOptions = {
-    origin: "https://fileshare-himu.netlify.app",
-    credentials:true,            //access-control-allow-credentials:true
-    optionSuccessStatus:200
-}
+// const corsOptions = {
+//     origin: "https://fileshare-himu.netlify.app",
+//     credentials:true,            //access-control-allow-credentials:true
+//     optionSuccessStatus:200
+// }
 
-app.use(cors(corsOptions));
+// app.use(cors(corsOptions));
+// const allowedOrigins = ['https://fileshare-himu.netlify.app'];
+
+app.use(cors({
+  origin: (origin, callback) => {
+    if (allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  }
+}));
 
 // template engine
 app.set('views', path.join(__dirname, '/views'));
