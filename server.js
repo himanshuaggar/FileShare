@@ -20,7 +20,7 @@ connectDB();
 // }
 
 // app.use(cors(corsOptions));
-// const allowedOrigins = ['https://fileshare-himu.netlify.app'];
+const allowedOrigins = ['https://fileshare-himu.netlify.app'];
 
 app.use(cors({
   origin: (origin, callback) => {
