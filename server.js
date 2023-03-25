@@ -20,17 +20,9 @@ connectDB();
 // }
 
 // app.use(cors(corsOptions));
-const allowedOrigins = ['https://fileshare-himu.netlify.app'];
+// const allowedOrigins = ['https://fileshare-himu.netlify.app'];
 
-app.use(cors({
-  origin: (origin, callback) => {
-    if (allowedOrigins.includes(origin)) {
-      callback(null, true);
-    } else {
-      callback(new Error('Not allowed by CORS'));
-    }
-  }
-}));
+app.use(cors());
 
 // template engine
 app.set('views', path.join(__dirname, '/views'));
